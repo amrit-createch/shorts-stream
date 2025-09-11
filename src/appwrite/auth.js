@@ -1,4 +1,4 @@
-import {Client,Account,ID} from "appwrite"
+import {Client, Account, ID} from "appwrite"
 import conf from "../config/conf"
 
 export class AuthService{
@@ -8,7 +8,7 @@ export class AuthService{
     this.client
     .setEndpoint(conf.appwriteUrl)
     .setProject(conf.appwriteProjectId)
-    this.account=new Account(this.client)
+    this.account = new Account(this.client)
    }
 
    async createAccount({email,password,name}){
