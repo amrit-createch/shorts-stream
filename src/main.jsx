@@ -10,8 +10,10 @@ import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "../Layout";
 import VideoPlayBack from "./pages/watch/VideoPlayBack";
-
-
+import SearchResultpage from "./pages/SearchResultpage";
+import Myvideopage from "./pages/Myvideopage";
+import UploadPage from "./pages/UploadPage";
+import MyVideoPlayback from "./pages/MyVideoPlayback";
 const router = createBrowserRouter([
   {
     path:"/",
@@ -25,6 +27,23 @@ const router = createBrowserRouter([
         path: "watch/:videoId", // <-- Add this dynamic route
         element: <VideoPlayBack />,
       },
+      {
+        path: "/search/:query",
+        element:<SearchResultpage/>
+      },
+      {
+        path:"my-videos",
+        element:<Myvideopage/>
+      },
+      {
+         path: "upload",
+          element: <UploadPage />  
+      },
+      {
+       path: "/my-videos/:videoId",
+       element: <MyVideoPlayback />,
+}
+
     ]
   }
 ])

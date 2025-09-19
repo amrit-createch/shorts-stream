@@ -7,7 +7,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
   const handleCategoryClick = (categoryId) => {
     dispatch(fetchVideos({ categoryId }));
-    toggleSidebar(); // optional: close sidebar after click
+    toggleSidebar(); 
   };
 
   return (

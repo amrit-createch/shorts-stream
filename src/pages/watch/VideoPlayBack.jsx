@@ -4,6 +4,8 @@ import {useSelector,useDispatch} from 'react-redux'
 import { fetchVideos } from '../../store/slices/videoSlice';
 function VideoPlayBack() {
     const dispatch = useDispatch()
+    const { items, status, error } = useSelector((state) => state.videos);
+
    useEffect(() => {
        if (status === "idle") {
          dispatch(fetchVideos());
