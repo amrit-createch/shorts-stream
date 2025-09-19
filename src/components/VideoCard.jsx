@@ -1,7 +1,14 @@
 import React from 'react'
-
-function VideoCard({title, channel, views, thumbnail}) {
+import {Link} from 'react-router-dom'
+function VideoCard({title, channel,videoId, views, thumbnail}) {
+     const formatViews = (views) => {
+        if (!views) return '0';
+        if (views >= 1000000) return `${(views / 1000000).toFixed(1)}M`;
+        if (views >= 1000) return `${(views / 1000).toFixed(0)}K`;
+        return views;
+    };
     return (
+       <Link to={`/watch/${videoId}`}>
         <div className="w-full max-w-sm">
   {/* Thumbnail */}
   <img
@@ -14,7 +21,7 @@ function VideoCard({title, channel, views, thumbnail}) {
   <div className="flex mt-2">
     {/* Channel Logo */}
     <img
-      src="https://via.placeholder.com/40"
+      src={thumbnail}
       alt="Channel Logo"
       className="w-10 h-10 rounded-full mr-3 flex-shrink-0"
     />
@@ -29,7 +36,7 @@ function VideoCard({title, channel, views, thumbnail}) {
     </div>
   </div>
 </div>
-
+</Link>
     )
 }
 
