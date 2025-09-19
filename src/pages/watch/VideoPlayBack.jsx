@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
-import { fetchVideos } from '../../store/slices/videoSLice';
+import { fetchVideos } from '../../store/slices/videoSlice';
 function VideoPlayBack() {
     const dispatch = useDispatch()
    useEffect(() => {
